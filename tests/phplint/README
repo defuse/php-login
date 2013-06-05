@@ -1,0 +1,59 @@
+PHPLINT README
+
+Phplint is a simple Tcl program that checks PHP programs trying to find
+accesses to not initialized varibles. This errors are frequent in PHP
+due to typos. For example consider the following code:
+
+    $fooBar = 10;
+    echo($fooBaar);
+               ^
+               |___ error!
+
+The wrong variable $fooBaar will only be found by the programmer when
+the program is executed and the exact line where the typo is preset
+is reached (assuming E_NOTICE error level is set).
+
+Thanks to automatic tests this kind of errors should be avoided from the
+start, but the real world is not perfect so a tool trying to spot this
+errors can be useful.
+
+Please Keep in mind that phplint is very limited and is not a real PHP
+parser, but just a number of regexp with some logic inside.
+This program was written at my company in some hour for the real world
+usage for a program we wanted to check after two weeks of
+refactoring, and it was able to found many bugs, so even if limited we
+hope it'll be useful for you too.
+
+USAGE
+
+Just try:
+
+    tclsh phplint.tcl /my/php/program/dir/*.php
+
+CODE ANNOTATIONS
+
+In order to avoid that avoid that phplint false positives are reported it is
+possible to annotate the source code with the following annotations:
+
+    $x = 10; # nolint
+
+Phplint will not analyze this above line.
+
+    function foobar() {
+        .. analyzed code ..
+        # lintoff
+        .. not analyzed code ..
+        # linton
+        .. analyzed code ..
+    }
+
+The above example allows to skip a number of lines at once
+
+CREDITS
+
+Salvatore Sanfilippo wrote the original 0.1 version of the script
+Pavel Hloušek contributed a much improved version, 0.2
+
+FEEDBACKS
+
+Email: antirez at gmail dot com

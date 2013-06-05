@@ -1,0 +1,7 @@
+Thank you for registering an account on Defuse Cyber-Security's secure
+login system for PHP. You can activate your account by clicking the 
+following link:
+
+    http://localhost.com/activate.php?t=%%TOKEN%%
+
+

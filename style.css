@@ -1,0 +1,28 @@
+h1, img, body, html {
+    margin: 0; padding: 0; border: 0;
+}
+
+#header {
+    background-color: #CACACA;
+}
+
+#header h1 {
+    font-size: 20px;
+    font-weight: normal;
+    padding: 10px;
+}
+
+#navbar {
+    padding: 5px;
+    background-color: #EEEEEE;
+    border-bottom: solid black 1px;
+    border-top: solid black 1px;
+}
+
+#content {
+    padding: 10px;
+}
+
+#content h2 {
+    border-bottom: 1px dotted black;
+}

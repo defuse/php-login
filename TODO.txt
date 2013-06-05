@@ -1,0 +1,15 @@
+2. Authenticated/Unauthenticated state in useraccount
+4. STRESS tests (name stress_ and make a stress_all.php)
+5. CRON for removing old entries from LOGIN_HISTORY shit
+
+-- Administrative account suspension (time based & permanent--toggle)
+-- Ability to 'reserve' usernames -- e.g. 'root', 'google' , 'admin', etc (just act like it's already taken)
+-- administrative ability to change people's usernames
+-- ability to change email address and re-verify
+-- account delettion (note: be careful about userid re-use)
+
+IMPORTANT:
+ - rename accounts.php/Accounts to AccountAdministration.php/AccountAdministration
+ - Break 'security.conf.php' into a 'conf/main.conf.php' which includes other configuration files -- security.conf.php, constants.conf.php, etc
+
+-- LOGIN SYSTEM: ALWAYS delay validation of password by a few seconds or whatever (so it seems snappy but would slow down an online attack in the same way iterated hashing slows down an offline attack)
