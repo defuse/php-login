@@ -33,28 +33,6 @@ require_once('inc/EmailValidation.php');
 require_once('inc/UserLockout.php');
 require_once('security/Escape.php');
 
-//TODO: Show current session expire time in UI and let them click "give me more time"
-//TODO: Optional email loop on create account AND use email as a second-factor authentication.
-//TODO: add some kind of easy way to do crypto in javascript. make a client-side key that's derrived from the master key for js only
-//TODO: EOTP, PPP
-//TODO: three password recovery opetions: Q&A and email auth, a printable account recovery key (default), no recovery option at all (for hardcore)
-//TODO: keyfile
-//FIXME: Works with most unicode characters but doesn't work with some russian symbols.
-//TODO: (captcha on password fail) lockout on x failed attempts (DOS: Bad guy can lock everyone out of their accounts...maybe a long static delay(30s then 2mins then 5mins?)), but this solves the ddos on the server problem, exponential delay. Do something on a per-IP basis because they could be trying to login to LOTS of accounts with the SAME password
-//TODO: add data encryption methods to the crypto library (which support SJCL)
-//TODO: Make sure this supports cross-browser close sessions (optional, by security constant), etc.
-//TODO: SECURE cookie flag (optional in parameters)
-//TODO: look at client cookies for better authentication (completely prevent XSS based cookie stealing attacks?)
-//TODO: Client-side certificates 
-//TODO: Google Authenticator?
-//TODO: means for re-authenticating for things like money transfers, password reset, etc
-
-//TODO: Include JAVASCRIPT library for easy encrypting/decrypting data (based on user pwd etc) client side.
-//TODO: Built in captcha library
-//TODO: have some way for users to communicate securely
-//TODO: only include javascript hashing scripts when client side hashing is enabled
-//TODO: make email based password reset default enable/diable a checkbox on register screen (maybe default value is a setting)
-
 if(!isset($_POST['username']) || !isset($_POST['password']) ||
    !isset($_POST['hashed']) || !isset($_POST['sessiontime']) ||
    !isset($_POST['eoc'])
